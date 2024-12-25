@@ -2,4 +2,13 @@
   %h1.mt-5 Welcome to My Rails Application
   %p.lead This is the home page of your application.
 
-  = button_to (user_signed_in? ? 'Logout' : 'Login'), (user_signed_in? ? destroy_user_session_path : new_user_session_path), method: (user_signed_in? ? :delete : :get), class: (user_signed_in? ? "btn btn-outline-success" : "btn btn-outline-primary")
+  - if user_signed_in?
+    = button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-outline-success"
+  - else
+    %p Use the magic link to login:
+    = form_with url: magic_link_path, method: :post, local: true do |form|
+      = form.email_field :email, placeholder: "Enter your email", class: "form-control"
+      = form.submit 'Send Magic Link', class: "btn btn-outline-primary mt-2"
+    %p.mt-3
+      or
+      = link_to 'Login with password', new_user_session_path, class: "btn btn-outline-secondary"
