@@ -20,6 +20,10 @@ gem "jbuilder"
 gem 'devise'
 # Use HAML as the templating engine for Rails views [https://github.com/haml/haml-rails]
 gem 'haml-rails'
+# Use the Mailtrap service for email testing [https://mailtrap.io]
+gem 'mailtrap'
+# Use dotenv to load environment variables from .env into ENV in development and test [
+gem 'dotenv-rails', groups: [:development, :test]
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
