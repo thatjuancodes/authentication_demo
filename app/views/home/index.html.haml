@@ -1,6 +1,6 @@
 .container
-  %h1.mt-5 Welcome to My Rails Application
-  %p.lead This is the home page of your application.
+  %h1.mt-5 This is a Rails app authentication demo
+  %p.lead Includes standard devise + magic link login
 
   - if user_signed_in?
     = button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-outline-success"
