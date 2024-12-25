@@ -1,0 +1,5 @@
+.container
+  %h1.mt-5 Welcome to My Rails Application
+  %p.lead This is the home page of your application.
+
+  = button_to (user_signed_in? ? 'Logout' : 'Login'), (user_signed_in? ? destroy_user_session_path : new_user_session_path), method: (user_signed_in? ? :delete : :get), class: (user_signed_in? ? "btn btn-outline-success" : "btn btn-outline-primary")
